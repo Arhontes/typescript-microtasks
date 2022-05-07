@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import FullInput from "./Week2/components/Inputs/FullInput";
 
+
+type MessageType = {
+  message: string,
+  id: number
+}
 function App() {
+
+  let [message, setMessage] = useState<MessageType[]>(
+      [
+        {message: 'HI!', id: 1},
+        {message: 'Zdarov!', id: 2},
+        {message: 'Bye!', id: 3},
+      ]
+  )
+const setMessageHandler=(props:string)=>{
+      let newMessage = {message: props, id: message.length+1}
+      setMessage([newMessage,...message])
+    }
+    let messageArray = message.map(m=>{return <div key={m.id}>{m.message}</div>})
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FullInput setMessage={setMessageHandler}/>
+        {messageArray}
     </div>
   );
 }
