@@ -14,13 +14,14 @@ const FullInput = (props:FullInputPropsType) => {
         setTitle('')
     };
 
-
     const universalButtonHandler=()=>{
         props.setMessage(title)
+        setTitle('')
+
     };
     return (
         <div>
-            <input onChange={onChangeFullInputHandler}/>
+            <input value={title} onChange={onChangeFullInputHandler}/>
             <UniversalButton name={'+'} callback={universalButtonHandler}/>
         </div>
     );
