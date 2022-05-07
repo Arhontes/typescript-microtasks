@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+/*import {Week2} from './Week2/Week2'*/
+import {Week2_1} from "./Week2/Week2_1";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <Week2_1 />
   </React.StrictMode>
 );
 

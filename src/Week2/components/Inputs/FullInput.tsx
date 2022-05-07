@@ -11,6 +11,7 @@ const FullInput = (props:FullInputPropsType) => {
 
     const onChangeFullInputHandler=(props:ChangeEvent<HTMLInputElement>)=>{
         setTitle(props.currentTarget.value)
+        setTitle('')
     };
 
 
